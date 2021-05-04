@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  ftp-server:
+    image: stilliard/pure-ftpd:hardened
+    container_name: ftp-server
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+    volumes:
+      - ./home:/home/ftpusers
+      - ./etc:/etc/ssl/private
+    environment:
+      - PUBLICHOST=localhost
+      - FTP_USER_NAME=xuser
+      - FTP_USER_PASS=xpass
+      - FTP_USER_HOME=/home/ftpusers
+      - ADDED_FLAGS="--tls=2"
