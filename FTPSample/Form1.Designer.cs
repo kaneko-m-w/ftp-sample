@@ -39,6 +39,10 @@ namespace FTPSample
             this.ButtonUpload = new System.Windows.Forms.Button();
             this.TextHost = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
+            this.ButtonDownload = new System.Windows.Forms.Button();
+            this.ButtonReflesh = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ListBoxDirectory = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // ButtonSelect
@@ -103,7 +107,7 @@ namespace FTPSample
             // 
             // ButtonUpload
             // 
-            this.ButtonUpload.Location = new System.Drawing.Point(134, 123);
+            this.ButtonUpload.Location = new System.Drawing.Point(132, 129);
             this.ButtonUpload.Name = "ButtonUpload";
             this.ButtonUpload.Size = new System.Drawing.Size(120, 20);
             this.ButtonUpload.TabIndex = 7;
@@ -124,15 +128,57 @@ namespace FTPSample
             this.label.AutoSize = true;
             this.label.Location = new System.Drawing.Point(11, 21);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(52, 13);
+            this.label.Size = new System.Drawing.Size(61, 13);
             this.label.TabIndex = 8;
-            this.label.Text = "FTP Host";
+            this.label.Text = "FTP Server";
+            // 
+            // ButtonDownload
+            // 
+            this.ButtonDownload.Enabled = false;
+            this.ButtonDownload.Location = new System.Drawing.Point(132, 240);
+            this.ButtonDownload.Name = "ButtonDownload";
+            this.ButtonDownload.Size = new System.Drawing.Size(120, 20);
+            this.ButtonDownload.TabIndex = 10;
+            this.ButtonDownload.Text = "Download";
+            this.ButtonDownload.UseVisualStyleBackColor = true;
+            this.ButtonDownload.Click += new System.EventHandler(this.ButtonDownload_Click);
+            // 
+            // ButtonReflesh
+            // 
+            this.ButtonReflesh.Location = new System.Drawing.Point(14, 240);
+            this.ButtonReflesh.Name = "ButtonReflesh";
+            this.ButtonReflesh.Size = new System.Drawing.Size(51, 20);
+            this.ButtonReflesh.TabIndex = 12;
+            this.ButtonReflesh.Text = "Reflesh";
+            this.ButtonReflesh.UseVisualStyleBackColor = true;
+            this.ButtonReflesh.Click += new System.EventHandler(this.ButtonReflesh_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "FTP server directory";
+            // 
+            // ListBoxDirectory
+            // 
+            this.ListBoxDirectory.FormattingEnabled = true;
+            this.ListBoxDirectory.Location = new System.Drawing.Point(14, 178);
+            this.ListBoxDirectory.Name = "ListBoxDirectory";
+            this.ListBoxDirectory.Size = new System.Drawing.Size(366, 56);
+            this.ListBoxDirectory.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 161);
+            this.ClientSize = new System.Drawing.Size(384, 261);
+            this.Controls.Add(this.ListBoxDirectory);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ButtonReflesh);
+            this.Controls.Add(this.ButtonDownload);
             this.Controls.Add(this.TextHost);
             this.Controls.Add(this.label);
             this.Controls.Add(this.ButtonUpload);
@@ -145,6 +191,7 @@ namespace FTPSample
             this.Controls.Add(this.ButtonSelect);
             this.Name = "Form1";
             this.Text = "ftp";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +209,10 @@ namespace FTPSample
         private System.Windows.Forms.Button ButtonUpload;
         private System.Windows.Forms.TextBox TextHost;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button ButtonDownload;
+        private System.Windows.Forms.Button ButtonReflesh;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox ListBoxDirectory;
     }
 }
 
